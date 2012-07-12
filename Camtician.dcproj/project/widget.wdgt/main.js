@@ -11,6 +11,8 @@
 function load()
 {
     dashcode.setupParts();
+	loadPrefs();
+//	versionCheck(); // XXX UNCOMMENT BEFORE RELEASE XXX
 }
 
 //
@@ -22,6 +24,7 @@ function remove()
     // Stop any timers to prevent CPU usage
     // Remove any preferences as needed
     // widget.setPreferenceForKey(null, dashcode.createInstancePreferenceKey("your-key"));
+	erasePrefs();
 }
 
 //
@@ -31,6 +34,7 @@ function remove()
 function hide()
 {
     // Stop any timers to prevent CPU usage
+	updatePrefs();
 }
 
 //
@@ -92,6 +96,7 @@ function showFront(event)
 
     if (window.widget) {
         widget.prepareForTransition("ToFront");
+		updatePrefs();
     }
 
     front.style.display="block";
@@ -108,3 +113,186 @@ if (window.widget) {
     widget.onshow = show;
     widget.onsync = sync;
 }
+
+
+
+// ---------------------------- //
+// Begin app-specific functions //
+// ---------------------------- //
+
+
+
+// Preference Initialisation
+
+var wid = widget.identifier;
+var prefWidget = loadPref(wid+"widget",1);
+var prefLensWidth = loadPref(wid+"lensWidth","22.5");
+var prefLensCrop = loadPref(wid+"lensCrop","1.60");
+var prefLensLength = loadPref(wid+"lensLength","50");
+var prefLensAngle = loadPref(wid+"lensAngle","23.00");
+
+// Preference Saving
+
+function loadPref(key,value) {
+	var string = widget.preferenceForKey(key);
+	if (string != null) {
+		return string;
+	} else {
+		widget.setPreferenceForKey(value,key);
+		return value;
+	}
+}
+
+function loadPrefs() {
+	document.getElementById("widgetSwitch").object.setSelectedIndex(prefWidget);
+	document.getElementById("lensCrop").value = prefLensCrop;
+//	updateFeedback();
+}
+
+function updatePrefs() {
+	if (window.widget) {
+		widget.setPreferenceForKey(prefWidget,wid+"widget");
+		widget.setPreferenceForKey(prefLensCrop,wid+"lensCrop");
+	}
+}
+
+function erasePrefs() {
+	if (window.widget) {
+		widget.setPreferenceForKey(null,wid+"widget");
+		widget.setPreferenceForKey(null,wid+"lensCrop");
+	}
+}
+
+
+
+// Basic Functions
+
+function updateType(event) {
+//	prefType = document.getElementById("type").object.getSelectedIndex();
+//	updateFeedback();
+//	updatePrefs();
+}
+
+// Conversions
+
+function lensUpdateAll(event) {
+	event = event.target.id;
+	alert(event);
+	if (event=="lensWidth") {
+		prefLensWidth = parseFloat(document.getElementById("lensWidth").value).toFixed(1);
+		prefLensCrop = (36/prefLensWidth).toFixed(2);
+//		alert("prefLensCrop: "+prefLensCrop);
+		document.getElementById("lensCrop").value = prefLensCrop;
+	}
+	if (event=="lensCrop") {
+		prefLensCrop = parseFloat(document.getElementById("lensCrop").value).toFixed(2);
+		prefLensWidth = (36/prefLensCrop).toFixed(1);
+//		alert("prefLensWidth: "+prefLensWidth);
+		document.getElementById("lensWidth").value = prefLensWidth;
+	}
+	if (event=="lensLength"||event=="lensWidth"||event=="lensCrop") { // focal length formula from http://kmp.bdimitrov.de/technology/fov.html
+		prefLensLength = parseFloat(document.getElementById("lensLength").value).toFixed(1);
+		prefLensAngle = (2*Math.atan(prefLensWidth/(2*prefLensLength))*(180/Math.PI)).toFixed(2);
+		document.getElementById("lensLength").value = prefLensLength;
+	}
+	if (event=="lensAngle"||event=="lensWidth"||event=="lensCrop") { // viewable angle formula adapted from various sources
+		prefLensAngle = parseFloat(document.getElementById("lensAngle").value).toFixed(2);
+		prefLensLength = (prefLensWidth/(2*Math.tan(Math.PI*prefLensAngle/360))).toFixed(1);
+		document.getElementById("lensAngle").value = prefLensAngle;
+	}
+	return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Show Functions
+
+var transitionIconLeft = new Transition(Transition.CUBE_TYPE, 1.5, Transition.EASE_TIMING, Transition.LEFT_TO_RIGHT_DIRECTION);
+var transitionIconRight = new Transition(Transition.CUBE_TYPE, 1.5, Transition.EASE_TIMING, Transition.RIGHT_TO_LEFT_DIRECTION);
+var transitionWidgetLeft = new Transition(Transition.SWAP_TYPE, 1.5, Transition.EASE_TIMING, Transition.LEFT_TO_RIGHT_DIRECTION);
+var transitionWidgetRight = new Transition(Transition.SWAP_TYPE, 1.5, Transition.EASE_TIMING, Transition.RIGHT_TO_LEFT_DIRECTION);
+
+function switchWidget(newIndex,newName) {
+	if (prefCurrentView < newIndex) {
+		document.getElementById("stack").object.setCurrentViewWithTransition(newName, transitionIconLeft, false, true);
+	} else {
+		document.getElementById("stack").object.setCurrentViewWithTransition(newName, transitionIconRight, false, true);
+	}
+	prefCurrentView = newIndex;
+}
+
+
+
+function showMain(event) {
+	document.getElementById("stack").object.setCurrentView("main", false, true);
+}
+
+function showList(event) {
+	document.getElementById("stack").object.setCurrentView("list", true, true);
+}
+
+function showUpdate(event) {
+	document.getElementById("stack").object.setCurrentView("update", true, true);
+}
+
+
+
+// Get Key Value
+
+function getKeyValue(plist, key) {
+	var infoPlist = new XMLHttpRequest();
+	infoPlist.open("GET", plist, false);
+	infoPlist.send(null);
+	infoPlist = infoPlist.responseText.replace(/(<([^>]+)>)/ig,"").replace(/\t/ig,"").split("\n");
+	for (var i=0; i<infoPlist.length; i++)
+		if (infoPlist[i] == key) return infoPlist[i+1];
+	return false;
+}
+
+// Auto Update
+
+function versionCheck(event) {
+	var request = new XMLHttpRequest();
+	var address = "http://iaian7.com/files/dashboard/camtician/version.php?RandomKey=" + Date.parse(new Date());
+//	alert(address);
+	request.open("GET", address,false);
+	request.send(null);
+	var versions = request.responseText.split("\n");
+
+	var bundleVersion = getKeyValue("Info.plist", "CFBundleVersion"); 
+	var websiteVersion = versions[0];
+//	alert("bundleVersion: "+bundleVersion);
+//	alert("websiteVersion: "+websiteVersion);
+
+	if (websiteVersion > bundleVersion) {
+		document.getElementById("newVersion").innerHTML = "version "+versions[0]+"<br/>"+versions[1];
+		showUpdate();
+	} else {
+//		alert("you have an up to date version, or there's been an error");
+	}
+}
+
+// Download File
+
+function versionDownload() {
+	widget.openURL("http://iaian7.com/files/dashboard/camtician/Camtician.zip");
+	showMain();
+}
+
+// Visit the website
+
+function iaian7(event)
+{
+	widget.openURL("http://iaian7.com/dashboard/camtician");
+}
+
+//*/

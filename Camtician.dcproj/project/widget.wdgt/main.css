@@ -23,9 +23,9 @@ body {
     position: absolute;
     width: 13px;
     height: 13px;
-    top: 25px;
-    left: 25px;
-    margin-right: auto;
+    top: 28px;
+    right: 40px;
+    margin-left: auto;
     margin-bottom: auto;
 }
 
@@ -52,6 +52,491 @@ body {
     margin-top: auto;
 }
 
+#backDevelopedWith {
+    position: absolute;
+    top: 67px;
+    left: 65px;
+    width: 150px;
+    height: 49px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#iconStack {
+    overflow: hidden;
+    z-index: 0;
+    position: absolute;
+    top: 3px;
+    height: 64px;
+    width: 80px;
+    left: 20px;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+#icon1 {
+    width: 100%;
+    display: none;
+    position: relative;
+    min-height: 64px;
+    background-image: url(Images/Icon-Lens-64.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat no-repeat;
+}
+
+#icon2 {
+    width: 100%;
+    display: none;
+    position: relative;
+    min-height: 64px;
+    background-image: url(Images/Icon-Time-64.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat no-repeat;
+}
+
+#icon3 {
+    width: 100%;
+    display: none;
+    position: relative;
+    background-image: url(Images/Icon-Ratio-64.png);
+    min-height: 64px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat no-repeat;
+}
+
+#widgetBox {
+    border-style: solid;
+    border-width: 1px;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: rgb(0, 0, 0);
+    background-color: rgb(13, 13, 13);
+    width: auto;
+    height: auto;
+    right: 20px;
+    bottom: 20px;
+    top: 60px;
+    left: 20px;
+}
+
+#widgetSwitchBox {
+    border-style: solid;
+    border-width: 1px;
+    position: absolute;
+    margin-top: 0px;
+    width: auto;
+    margin-bottom: auto;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgb(13, 13, 13);
+    border-color: rgb(0, 0, 0);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 28px;
+    text-overflow: clip;
+    overflow: hidden;
+}
+
+#widgetSwitch {
+    position: absolute;
+    margin-top: 0px;
+    font-family: 'Helvetica Neue';
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) 0px -1px 0px;
+    font-size: 16px;
+    text-align: center;
+    height: 25px;
+    top: 1px;
+    left: -1px;
+    right: -1px;
+    width: auto;
+}
+
+#inputBox {
+    position: absolute;
+    margin-top: 0px;
+    border-width: 1px !important;
+    font-size: 13px;
+    border-color: rgb(0, 0, 0);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: 25px;
+    width: 170px;
+    right: 0px;
+    margin-left: auto;
+    margin-bottom: auto;
+    top: 35px;
+}
+
+#inputY {
+    position: absolute;
+    font-family: HelveticaNeue;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: rgba(13, 13, 13, 0);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 0px;
+    right: 5px;
+    margin-left: auto;
+    top: 0px;
+    font-size: 16px;
+    width: 60px;
+}
+
+#inputX {
+    position: absolute;
+    font-family: HelveticaNeue;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: rgba(13, 13, 13, 0);
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 0px;
+    font-size: 16px;
+    width: 60px;
+    top: 0px;
+    left: 5px;
+    margin-right: auto;
+}
+
+#x1 {
+    font-family: HelveticaNeue;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 18px;
+    text-shadow: none;
+    margin-bottom: auto;
+    height: 20px;
+    top: 0px;
+    left: 65px;
+    right: 65px;
+    opacity: 0.5;
+    width: auto;
+}
+
+#presets {
+    position: absolute;
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Helvetica Neue';
+    font-size: 14px;
+    height: 25px;
+    text-shadow: rgb(0, 0, 0) 0px -1px 0px;
+    text-align: center;
+    margin-bottom: auto;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: auto;
+}
+
+#x3 {
+    font-family: HelveticaNeue;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: none;
+    font-size: 18px;
+    border-color: rgb(0, 0, 0);
+    height: 20px;
+    top: 0px;
+    left: 65px;
+    right: 65px;
+    opacity: 0.5;
+    margin-left: auto;
+    width: 40px;
+    margin-bottom: auto;
+}
+
+#outputBox {
+    position: absolute;
+    margin-top: 0px;
+    border-width: 1px !important;
+    border-color: rgb(0, 0, 0);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: 25px;
+    right: 0px;
+    margin-left: auto;
+    margin-bottom: auto;
+    width: 170px;
+    top: 65px;
+}
+
+#outputX {
+    position: absolute;
+    font-family: HelveticaNeue;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
+    background-color: rgba(13, 13, 13, 0);
+    border-style: solid;
+    border-width: 0px;
+    top: 0px;
+    font-size: 16px;
+    width: 60px;
+    left: 5px;
+    margin-right: auto;
+}
+
+#outputY {
+    position: absolute;
+    font-family: HelveticaNeue;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 0px;
+    right: 5px;
+    margin-left: auto;
+    top: 0px;
+    font-size: 16px;
+    width: 60px;
+}
+
+#scale {
+    position: absolute;
+    font-family: HelveticaNeue;
+    color: rgb(255, 255, 255);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: rgb(0, 0, 0);
+    background-color: rgba(13, 13, 13, 0);
+    border-width: 0px;
+    text-align: right;
+    font-size: 16px;
+    top: 0px;
+    width: 55px;
+    left: 5px;
+}
+
+#x2 {
+    font-family: HelveticaNeue;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: none;
+    border-color: rgb(0, 0, 0);
+    height: 18px;
+    width: 18px;
+    font-size: 14px;
+    opacity: 0.5;
+    top: 4px;
+    right: 0px;
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+#scaleBox {
+    position: absolute;
+    margin-top: 0px;
+    border-width: 1px !important;
+    border-color: rgb(0, 0, 0);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: 25px;
+    margin-bottom: auto;
+    margin-right: auto;
+    left: 0px;
+    width: 80px;
+    top: 65px;
+}
+
+#ratioAuto {
+    text-align: center;
+    cursor: default;
+    -khtml-user-select: none;
+    position: absolute;
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) 0px -1px 0px;
+    font-size: 14px;
+    opacity: 1;
+    left: 0px;
+    height: 25px;
+    width: 85px;
+    top: 35px;
+    font-family: 'Helvetica Neue';
+}
+
+#widgetStack {
+    overflow: hidden;
+    z-index: 0;
+    position: absolute;
+    margin-top: 0px;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    width: auto;
+    bottom: -1px;
+    height: auto;
+}
+
+#widget1 {
+    width: 100%;
+    display: none;
+    position: relative;
+    min-height: 100px;
+}
+
+#widget2 {
+    width: 100%;
+    display: none;
+    position: relative;
+    min-height: 100px;
+    height: auto;
+}
+
+#widget3 {
+    width: 100%;
+    display: none;
+    position: relative;
+    min-height: 100px;
+}
+
+#lensWidthText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    font-size: 12px;
+    text-align: right;
+    top: 20px;
+    height: 15px;
+    left: 0px;
+    right: 0px;
+    width: auto;
+}
+
+.selected #lensWidthText {
+    color: white;
+}
+
+#lensLengthMM {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    text-align: right;
+    height: 15px;
+    left: 0px;
+    top: 7px;
+    right: 0px;
+    width: auto;
+    font-size: 10px;
+}
+
+.selected #lensLengthMM {
+    color: white;
+}
+
+#lensAngleDegree {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    text-align: right;
+    height: 15px;
+    left: 0px;
+    top: 2px;
+    font-size: 18px;
+    right: 0px;
+    width: auto;
+}
+
+.selected #lensAngleDegree {
+    color: white;
+}
+
+#lensLength {
+    position: absolute;
+    font-family: HelveticaNeue;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 0px;
+    font-size: 16px;
+    left: 0px;
+    width: 68px;
+}
+
+#lensLengthText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    font-size: 12px;
+    text-align: right;
+    height: 15px;
+    left: 0px;
+    top: 20px;
+    right: 0px;
+    width: auto;
+}
+
+.selected #lensLengthText {
+    color: white;
+}
+
 #cameraType {
     position: absolute;
     color: rgb(255, 255, 255);
@@ -60,50 +545,14 @@ body {
     text-shadow: rgb(0, 0, 0) 0px -1px 0px;
     height: 25px;
     text-align: center;
-    left: -1px;
+    left: 0px;
     width: auto;
-    right: -1px;
-    top: -1px;
-}
-
-#FieldOfView {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    position: absolute;
-    margin-top: 0px;
-    top: 20px;
-    left: 20px;
-    background-color: rgb(13, 13, 13);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    right: 0px;
     margin-bottom: auto;
-    right: 20px;
-    width: auto;
-    height: 73px;
+    top: 0px;
 }
 
-#TimeConversion {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    position: absolute;
-    background-color: rgb(13, 13, 13);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    left: 20px;
-    margin-top: auto;
-    right: 20px;
-    width: auto;
-    bottom: 20px;
-    height: 53px;
-}
-
-#lens {
+#lensWidth {
     position: absolute;
     font-family: HelveticaNeue;
     background-color: rgba(0, 0, 0, 0);
@@ -111,14 +560,14 @@ body {
     border-style: solid;
     border-width: 0px;
     color: rgb(255, 255, 255);
-    font-size: 14px;
-    top: 30px;
-    width: 78px;
     text-align: center;
+    top: 0px;
+    font-size: 16px;
     left: 0px;
+    width: 68px;
 }
 
-#sensor {
+#lensAngle {
     position: absolute;
     font-family: HelveticaNeue;
     background-color: rgba(0, 0, 0, 0);
@@ -126,210 +575,14 @@ body {
     border-style: solid;
     border-width: 0px;
     color: rgb(255, 255, 255);
-    font-size: 14px;
-    top: 30px;
-    width: 78px;
-    left: 89px;
     text-align: center;
-}
-
-#angle {
-    position: absolute;
-    font-family: HelveticaNeue;
-    background-color: rgba(0, 0, 0, 0);
-    border-color: rgb(0, 0, 0);
-    border-style: solid;
-    border-width: 0px;
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-    top: 30px;
-    width: 78px;
-    left: 178px;
-    text-align: center;
-}
-
-#lensMM {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    font-family: 'Helvetica Neue';
-    font-size: 14px;
-    border-width: 1px;
-    height: 16px;
-    border-color: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.496094);
-    cursor: default;
-    -khtml-user-select: none;
-    top: 33px;
-    text-align: right;
-    width: 70px;
-    left: 5px;
-}
-
-.selected #lensMM {
-    color: white;
-}
-
-#sensorMM {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    font-family: 'Helvetica Neue';
-    font-size: 14px;
-    border-width: 1px;
-    height: 16px;
-    border-color: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.496094);
-    cursor: default;
-    -khtml-user-select: none;
-    top: 33px;
-    margin-right: auto;
-    text-align: right;
-    width: 70px;
-    left: 94px;
-}
-
-.selected #sensorMM {
-    color: white;
-}
-
-#angleDegree {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    font-family: 'Helvetica Neue';
-    font-size: 14px;
-    border-width: 1px;
-    height: 16px;
-    border-color: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.496094);
-    cursor: default;
-    -khtml-user-select: none;
-    top: 33px;
-    text-align: right;
-    width: 70px;
-    left: 183px;
-}
-
-.selected #angleDegree {
-    color: white;
-}
-
-#textLens {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    font-family: 'Helvetica Neue';
-    border-width: 1px;
-    border-color: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.496094);
-    cursor: default;
-    -khtml-user-select: none;
-    height: 20px;
-    font-size: 12px;
-    top: 50px;
-    text-align: right;
-    left: 5px;
-    width: 70px;
-}
-
-.selected #textLens {
-    color: white;
-}
-
-#textSensor {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    font-family: 'Helvetica Neue';
-    border-width: 1px;
-    border-color: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.496094);
-    cursor: default;
-    -khtml-user-select: none;
-    height: 20px;
-    font-size: 12px;
-    top: 50px;
-    text-align: right;
-    width: 70px;
-    left: 94px;
-}
-
-.selected #textSensor {
-    color: white;
-}
-
-#textAngle {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    font-family: 'Helvetica Neue';
-    border-width: 1px;
-    border-color: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.496094);
-    cursor: default;
-    -khtml-user-select: none;
-    height: 20px;
-    font-size: 12px;
-    top: 50px;
-    text-align: right;
-    width: 70px;
-    left: 183px;
-}
-
-.selected #textAngle {
-    color: white;
-}
-
-#frames {
-    position: absolute;
-    font-family: HelveticaNeue;
-    background-color: rgba(0, 0, 0, 0);
-    border-color: rgb(0, 0, 0);
-    border-style: solid;
-    border-width: 0px;
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-    width: 78px;
-    text-align: center;
+    top: 0px;
+    font-size: 16px;
     left: 0px;
-    top: 10px;
+    width: 68px;
 }
 
-#fps {
-    position: absolute;
-    font-family: HelveticaNeue;
-    background-color: rgba(0, 0, 0, 0);
-    border-color: rgb(0, 0, 0);
-    border-style: solid;
-    border-width: 0px;
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-    width: 78px;
-    text-align: center;
-    left: 89px;
-    top: 10px;
-}
-
-#seconds {
-    position: absolute;
-    font-family: HelveticaNeue;
-    background-color: rgba(0, 0, 0, 0);
-    border-color: rgb(0, 0, 0);
-    border-style: solid;
-    border-width: 0px;
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-    width: 78px;
-    text-align: center;
-    left: 178px;
-    top: 10px;
-}
-
-#secondsText {
+#lensAngleText {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -339,15 +592,102 @@ body {
     color: rgba(255, 255, 255, 0.496094);
     cursor: default;
     -khtml-user-select: none;
-    height: 20px;
     font-size: 12px;
-    text-align: center;
-    width: 80px;
-    left: 178px;
-    top: 30px;
+    text-align: right;
+    left: 0px;
+    top: 20px;
+    height: 15px;
+    right: 0px;
+    width: auto;
 }
 
-.selected #secondsText {
+.selected #lensAngleText {
+    color: white;
+}
+
+#lensWidthMM {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    text-align: right;
+    left: 0px;
+    height: 15px;
+    top: 7px;
+    right: 0px;
+    width: auto;
+    font-size: 10px;
+}
+
+.selected #lensWidthMM {
+    color: white;
+}
+
+#lensCropX {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    text-align: right;
+    left: 0px;
+    height: 15px;
+    right: 0px;
+    width: auto;
+    font-size: 14px;
+    top: 5px;
+}
+
+.selected #lensCropX {
+    color: white;
+}
+
+#lensCrop {
+    position: absolute;
+    font-family: HelveticaNeue;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 0px;
+    font-size: 16px;
+    left: 0px;
+    width: 68px;
+}
+
+#lensCropText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    font-size: 12px;
+    text-align: right;
+    left: 0px;
+    height: 15px;
+    top: 20px;
+    right: 0px;
+    width: auto;
+}
+
+.selected #lensCropText {
     color: white;
 }
 
@@ -361,16 +701,46 @@ body {
     color: rgba(255, 255, 255, 0.496094);
     cursor: default;
     -khtml-user-select: none;
-    height: 20px;
     font-size: 12px;
-    width: 80px;
-    left: 89px;
     text-align: center;
     top: 30px;
+    height: 15px;
+    width: 70px;
+    left: 95px;
 }
 
 .selected #fpsText {
     color: white;
+}
+
+#fps {
+    position: absolute;
+    font-family: HelveticaNeue;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 10px;
+    font-size: 16px;
+    width: 68px;
+    left: 95px;
+}
+
+#milliseconds {
+    position: absolute;
+    font-family: HelveticaNeue;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 10px;
+    font-size: 16px;
+    width: 68px;
+    left: 185px;
 }
 
 #framesText {
@@ -383,14 +753,318 @@ body {
     color: rgba(255, 255, 255, 0.496094);
     cursor: default;
     -khtml-user-select: none;
-    height: 20px;
     font-size: 12px;
-    width: 80px;
-    left: 0px;
     text-align: center;
     top: 30px;
+    height: 15px;
+    left: 5px;
+    width: 70px;
 }
 
 .selected #framesText {
+    color: white;
+}
+
+#millisecondsText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    font-size: 12px;
+    text-align: center;
+    top: 30px;
+    height: 15px;
+    width: 70px;
+    left: 185px;
+}
+
+.selected #millisecondsText {
+    color: white;
+}
+
+#frames {
+    position: absolute;
+    font-family: HelveticaNeue;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 10px;
+    font-size: 16px;
+    left: 5px;
+    width: 68px;
+}
+
+#seconds {
+    position: absolute;
+    font-family: HelveticaNeue;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 50px;
+    font-size: 16px;
+    width: 68px;
+    left: 185px;
+}
+
+#secondsText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    font-size: 12px;
+    text-align: center;
+    top: 70px;
+    height: 15px;
+    width: 70px;
+    left: 185px;
+}
+
+.selected #secondsText {
+    color: white;
+}
+
+#lensWidthBox {
+    border-color: black;
+    border-width: 1px;
+    position: absolute;
+    margin-top: 0px;
+    text-align: left;
+    width: 70px;
+    height: 35px;
+    left: 5px;
+    top: 25px;
+}
+
+#lensCropBox {
+    border-color: black;
+    border-width: 1px;
+    position: absolute;
+    margin-top: 0px;
+    text-align: left;
+    width: 70px;
+    height: 35px;
+    left: 5px;
+    top: 65px;
+}
+
+#lensLengthBox {
+    border-color: black;
+    border-width: 1px;
+    position: absolute;
+    margin-top: 0px;
+    text-align: left;
+    width: 70px;
+    height: 35px;
+    left: 95px;
+    margin-right: auto;
+    top: 25px;
+}
+
+#lensAngleBox {
+    border-color: black;
+    border-width: 1px;
+    position: absolute;
+    margin-top: 0px;
+    text-align: left;
+    width: 70px;
+    height: 35px;
+    left: 185px;
+    margin-right: auto;
+    top: 25px;
+}
+
+#zoomLWBox {
+    border-color: black;
+    border-width: 1px;
+    position: absolute;
+    margin-top: 0px;
+    text-align: left;
+    width: 70px;
+    height: 35px;
+    visibility: hidden;
+    top: 65px;
+    right: 95px;
+    margin-left: auto;
+}
+
+#zoomLW {
+    position: absolute;
+    font-family: HelveticaNeue;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 0px;
+    width: 70px;
+    font-size: 16px;
+    left: -1px;
+}
+
+#zoomLWText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    font-size: 12px;
+    text-align: right;
+    height: 15px;
+    left: 0px;
+    top: 20px;
+    right: 0px;
+    width: auto;
+}
+
+.selected #zoomLWText {
+    color: white;
+}
+
+#zoomLWZ {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    -khtml-user-select: none;
+    text-align: right;
+    font-size: 12px;
+    height: 15px;
+    left: 0px;
+    top: 7px;
+    right: 0px;
+    width: auto;
+}
+
+.selected #zoomLWZ {
+    color: white;
+}
+
+#ratioSwap {
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Helvetica Neue';
+    top: 2px;
+    left: 66px;
+    right: 56px;
+    width: auto;
+    bottom: 3px;
+    height: auto;
+    padding: 0px;
+    white-space: nowrap;
+    text-overflow: clip;
+    letter-spacing: 16px;
+    font-size: 10px;
+    cursor: default;
+    -khtml-user-select: none;
+    text-align: left;
+    visibility: hidden;
+}
+
+.selected #ratioSwap {
+    color: white;
+}
+
+#angleBox1 {
+    border-color: black;
+    border-width: 1px;
+    position: absolute;
+    margin-top: 0px;
+    text-align: left;
+    width: 70px;
+    height: 35px;
+    margin-right: auto;
+    top: 65px;
+    left: 185px;
+    visibility: hidden;
+}
+
+#angleDegree1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    text-align: right;
+    height: 15px;
+    left: 0px;
+    top: 2px;
+    font-size: 18px;
+    right: 0px;
+    width: auto;
+}
+
+.selected #angleDegree1 {
+    color: white;
+}
+
+#angle1 {
+    position: absolute;
+    font-family: HelveticaNeue;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-width: 0px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    top: 0px;
+    font-size: 16px;
+    left: 0px;
+    width: 68px;
+}
+
+#angleText1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    font-family: 'Helvetica Neue';
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.496094);
+    cursor: default;
+    -khtml-user-select: none;
+    font-size: 12px;
+    text-align: right;
+    left: 0px;
+    top: 20px;
+    height: 15px;
+    right: 0px;
+    width: auto;
+}
+
+.selected #angleText1 {
     color: white;
 }
