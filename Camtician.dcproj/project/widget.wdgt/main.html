@@ -18,8 +18,8 @@
             <div id="widgetSwitch" apple-part="com.apple.Dashcode.part.roundedpopupbutton" class="apple-no-children" apple-style="image-theme: 3; image-shape: 3; image-button-type: 1; image-opacity: 1.00; image-top-color: 0,0,0,1; image-bottom-color: 1,1,1,1; image-radius: 4,4,4,4; image-border: 0; image-border-color: 0,0,0,1; image-border-width: 1; shine-on: 1; shine-strength: 0.25; shine-alpha-level: 1.00; shine-height: 0.50; glass-arc-height: 0.00; shadow-include-shadow: 0;"></div>
         </div>
         <div id="widgetBox" apple-part="com.apple.Dashcode.part.box">
-            <div id="widgetStack" apple-part="com.apple.Dashcode.part.StackLayout"><div id="widget1" apple-part-locked="true">
-                    <div id="cameraType" apple-part="com.apple.Dashcode.part.roundedpopupbutton" class="apple-no-children" apple-style="image-theme: 0; image-shape: 3; image-button-type: 1; image-opacity: 1.00; image-top-color: 0,0,0,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,1; image-border-width: 1; shine-on: 1; shine-strength: 0.25; shine-alpha-level: 1.00; shine-height: 0.50; glass-arc-height: 0.00; shadow-include-shadow: 0;"></div>
+            <div id="widgetStack" apple-part="com.apple.Dashcode.part.StackLayout"><div id="widget0" apple-part-locked="true">
+                    <div id="lensPreset" apple-part="com.apple.Dashcode.part.roundedpopupbutton" class="apple-no-children" apple-style="image-theme: 0; image-shape: 3; image-button-type: 1; image-opacity: 1.00; image-top-color: 0,0,0,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,1; image-border-width: 1; shine-on: 1; shine-strength: 0.25; shine-alpha-level: 1.00; shine-height: 0.50; glass-arc-height: 0.00; shadow-include-shadow: 0;"></div>
                     <div id="lensWidthBox" apple-part="com.apple.Dashcode.part.box">
                         <div id="lensWidthMM" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
                         <input id="lensWidth" type="text" name="lensWidth" value="22.5" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" onchange="lensUpdateAll(event)">
@@ -35,31 +35,30 @@
                         <input id="lensLength" type="text" name="lensLength" value="23.0" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" onchange="lensUpdateAll(event)">
                         <div id="lensLengthText" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
                     </div>
-                    <div id="zoomLWBox" apple-part="com.apple.Dashcode.part.box">
-                        <div id="zoomLWZ" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
-                        <input id="zoomLW" type="text" name="zoomLW" value="2.4" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield">
-                        <div id="zoomLWText" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
-                    </div>
                     <div id="lensAngleBox" apple-part="com.apple.Dashcode.part.box">
                         <div id="lensAngleDegree" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
                         <input id="lensAngle" type="text" name="lensAngle" value="51.52" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" onchange="lensUpdateAll(event)">
                         <div id="lensAngleText" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
                     </div>
-                    <div id="angleBox1" apple-part="com.apple.Dashcode.part.box">
-                        <div id="angleDegree1" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
-                        <input id="angle1" type="text" name="angle" value="70" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield">
-                        <div id="angleText1" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+                </div><div id="widget1" apple-part-locked="true">
+                    <div id="timePreset" apple-part="com.apple.Dashcode.part.roundedpopupbutton" class="apple-no-children" apple-style="image-theme: 0; image-shape: 3; image-button-type: 1; image-opacity: 1.00; image-top-color: 0,0,0,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,1; image-border-width: 1; shine-on: 1; shine-strength: 0.25; shine-alpha-level: 1.00; shine-height: 0.50; glass-arc-height: 0.00; shadow-include-shadow: 0;"></div>
+                    <div id="timeFramesBox" apple-part="com.apple.Dashcode.part.box">
+                        <input id="timeFrames" type="text" name="timeFrames" value="15" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" onchange="timeUpdateAll(event)">
+                        <div id="timeFramesText" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+                    </div>
+                    <div id="timeFPSBox" apple-part="com.apple.Dashcode.part.box">
+                        <input id="timeFPS" type="text" name="timeFPS" value="30" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" onchange="timeUpdateAll(event)">
+                        <div id="timeFPSText" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+                    </div>
+                    <div id="timeMillisecondsBox" apple-part="com.apple.Dashcode.part.box">
+                        <input id="timeMilliseconds" type="text" name="timeMilliseconds" value="500" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" onchange="timeUpdateAll(event)">
+                        <div id="timeMillisecondsText" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+                    </div>
+                    <div id="timeSecondsBox" apple-part="com.apple.Dashcode.part.box">
+                        <input id="timeSeconds" type="text" name="timeSeconds" value="0.500" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" onchange="timeUpdateAll(event)">
+                        <div id="timeSecondsText" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
                     </div>
                 </div><div id="widget2" apple-part-locked="true">
-                    <input id="frames" type="text" name="frames" value="15" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield">
-                    <div id="framesText" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
-                    <input id="fps" type="text" name="fps" value="30" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield">
-                    <div id="fpsText" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
-                    <input id="milliseconds" type="text" name="milliseconds" value="50" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield">
-                    <input id="seconds" type="text" name="seconds" value="0.005" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield">
-                    <div id="millisecondsText" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
-                    <div id="secondsText" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
-                </div><div id="widget3" apple-part-locked="true">
                     <div apple-part="com.apple.Dashcode.part.roundedpopupbutton" class="apple-no-children" apple-style="image-theme: 0; image-shape: 3; image-button-type: 1; image-opacity: 1.00; image-top-color: 0,0,0,1; image-bottom-color: 0.615400016,0.615400016,0.615400016,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,1; image-border-width: 1; shine-on: 1; shine-strength: 0.25; shine-alpha-level: 1.00; shine-height: 0.50; glass-arc-height: 0.00; embossed-on: 0; embossed-depth: 1; embossed-shadow: 0.5; embossed-highlight: 0.5; shadow-include-shadow: 0;" id="presets"></div>
                     <div id="ratioAuto" apple-part="com.apple.Dashcode.part.roundedtextbutton" class="apple-no-children" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0,0,0,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,1; image-border-width: 1; shine-on: 1; shine-strength: 0.25; shine-alpha-level: 1.00; shine-height: 0.50; glass-arc-height: 0.00; shadow-include-shadow: 0;"></div>
                     <div apple-part="com.apple.Dashcode.part.box" id="inputBox" apple-group="input">
@@ -79,16 +78,15 @@
                     </div>
                 </div></div>
         </div>
-        <div id="iconStack" apple-part="com.apple.Dashcode.part.StackLayout"><div id="icon1" apple-part-locked="true">
+        <div id="iconStack" apple-part="com.apple.Dashcode.part.StackLayout"><div id="icon0" apple-part-locked="true">
+            </div><div id="icon1" apple-part-locked="true">
             </div><div id="icon2" apple-part-locked="true">
-            </div><div id="icon3" apple-part-locked="true">
             </div></div>
         <div class="apple-no-children" id="info" apple-part="com.apple.Dashcode.part.infobutton" apple-default-image-visibility="hidden"></div>
     </div>
     <div id="back">
         <img id="backImg" src="Parts/Images/back.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.backimage" apple-style=" image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.1500,0.1500,0.1500; image-border-width: 3; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">
-        <img src="Images/DevelopedWith.png" alt="Created with Dashcode" id="backDevelopedWith">
-        <div id="done" class="apple-no-children" apple-part="com.apple.Dashcode.part.glassbutton"></div>
+        <div id="done" apple-part="com.apple.Dashcode.part.roundedtextbutton" class="apple-no-children" apple-style="image-theme: 0; image-shape: 3; image-button-type: 0; image-opacity: 1.00; image-top-color: 0,0,0,1; image-bottom-color: 1,1,1,1; image-radius: 5,5,5,5; image-border: 1; image-border-color: 0,0,0,1; image-border-width: 1; shine-on: 1; shine-strength: 0.25; shine-alpha-level: 1.00; shine-height: 0.50; glass-arc-height: 0.00; shadow-include-shadow: 0;"></div>
     </div>
 </body>
 </html>

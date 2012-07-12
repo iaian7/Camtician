@@ -126,10 +126,19 @@ if (window.widget) {
 
 var wid = widget.identifier;
 var prefWidget = loadPref(wid+"widget",1);
-var prefLensWidth = loadPref(wid+"lensWidth","22.5");
-var prefLensCrop = loadPref(wid+"lensCrop","1.60");
-var prefLensLength = loadPref(wid+"lensLength","50");
-var prefLensAngle = loadPref(wid+"lensAngle","23.00");
+var prefWidgetCurrent = 0;
+
+var prefLensPreset = loadPref(wid+"lensPreset",0);
+var prefLensWidth = loadPref(wid+"lensWidth",22.5);
+var prefLensCrop = loadPref(wid+"lensCrop",1.60);
+var prefLensLength = loadPref(wid+"lensLength",50);
+var prefLensAngle = loadPref(wid+"lensAngle",23.00);
+
+var prefTimePreset = loadPref(wid+"timePreset",0);
+var prefTimeFrames = loadPref(wid+"timeFrames",15);
+var prefTimeFPS = loadPref(wid+"timeFPS",30);
+var prefTimeMilliseconds = loadPref(wid+"timeMilliseconds",500);
+var prefTimeSeconds = loadPref(wid+"timeSeconds",0.500);
 
 // Preference Saving
 
@@ -145,6 +154,7 @@ function loadPref(key,value) {
 
 function loadPrefs() {
 	document.getElementById("widgetSwitch").object.setSelectedIndex(prefWidget);
+	switchWidget();
 	document.getElementById("lensCrop").value = prefLensCrop;
 //	updateFeedback();
 }
@@ -167,43 +177,83 @@ function erasePrefs() {
 
 // Basic Functions
 
-function updateType(event) {
-//	prefType = document.getElementById("type").object.getSelectedIndex();
+function updateWidget(event) {
+	prefWidget = document.getElementById("widgetSwitch").object.getSelectedIndex();
 //	updateFeedback();
 //	updatePrefs();
+	return switchWidget(event);
 }
+
+
 
 // Conversions
 
 function lensUpdateAll(event) {
 	event = event.target.id;
-	alert(event);
+//	alert(event);
+	if (event=="lensPreset") {
+		prefLensWidth = parseFloat(document.getElementById("lensWidth").value).toFixed(1);
+		prefLensCrop = (36/prefLensWidth).toFixed(2);
+		document.getElementById("lensCrop").value = prefLensCrop;
+	}
 	if (event=="lensWidth") {
 		prefLensWidth = parseFloat(document.getElementById("lensWidth").value).toFixed(1);
 		prefLensCrop = (36/prefLensWidth).toFixed(2);
-//		alert("prefLensCrop: "+prefLensCrop);
 		document.getElementById("lensCrop").value = prefLensCrop;
 	}
 	if (event=="lensCrop") {
 		prefLensCrop = parseFloat(document.getElementById("lensCrop").value).toFixed(2);
 		prefLensWidth = (36/prefLensCrop).toFixed(1);
-//		alert("prefLensWidth: "+prefLensWidth);
 		document.getElementById("lensWidth").value = prefLensWidth;
 	}
-	if (event=="lensLength"||event=="lensWidth"||event=="lensCrop") { // focal length formula from http://kmp.bdimitrov.de/technology/fov.html
+	if (event!=="lensAngle") {
 		prefLensLength = parseFloat(document.getElementById("lensLength").value).toFixed(1);
-		prefLensAngle = (2*Math.atan(prefLensWidth/(2*prefLensLength))*(180/Math.PI)).toFixed(2);
+		prefLensAngle = (2*Math.atan(prefLensWidth/(2*prefLensLength))*(180/Math.PI)).toFixed(2); // viewable angle formula adapted from various sources
 		document.getElementById("lensLength").value = prefLensLength;
 	}
-	if (event=="lensAngle"||event=="lensWidth"||event=="lensCrop") { // viewable angle formula adapted from various sources
+	if (event!=="lensLength") {
 		prefLensAngle = parseFloat(document.getElementById("lensAngle").value).toFixed(2);
-		prefLensLength = (prefLensWidth/(2*Math.tan(Math.PI*prefLensAngle/360))).toFixed(1);
+		prefLensLength = (prefLensWidth/(2*Math.tan(Math.PI*prefLensAngle/360))).toFixed(1); // focal length formula from http://kmp.bdimitrov.de/technology/fov.html
 		document.getElementById("lensAngle").value = prefLensAngle;
 	}
-	return false;
+//	return true;
 }
 
-
+function timeUpdateAll(event) {
+	event = event.target.id;
+	alert(event);
+	if (event=="timePreset") {
+		alert(document.getElementById("timePreset").object.getSelectedIndex());
+		alert(document.getElementById("timePreset").object.value);
+//		prefTimePreset = document.getElementById("timePreset").object.getSelectedIndex();
+//		document.getElementById("timeFPS").value = document.getElementById("timePreset").object.value;
+	} else if (event=="timeFrames") {
+		prefTimeFrames = parseInt(document.getElementById("timeFrames").value);
+		prefTimeSeconds = parseFloat(prefTimeFrames/prefTimeFPS).toFixed(3);
+		prefTimeMilliseconds = parseInt((prefTimeFrames/prefTimeFPS)*1000);
+		document.getElementById("timeSeconds").value = prefTimeSeconds;
+		document.getElementById("timeMilliseconds").value = prefTimeMilliseconds;
+	} else if (event=="timeFPS") {
+		prefTimeFPS = parseFloat(document.getElementById("timeFPS").value).toFixed(3);
+		prefTimeSeconds = parseFloat(prefTimeFrames/prefTimeFPS).toFixed(3);
+		prefTimeMilliseconds = parseInt((prefTimeFrames/prefTimeFPS)*1000);
+		document.getElementById("timeSeconds").value = prefTimeSeconds;
+		document.getElementById("timeMilliseconds").value = prefTimeMilliseconds;
+	} else if (event=="timeMilliseconds") {
+		prefTimeMilliseconds = parseInt(document.getElementById("timeMilliseconds").value);
+		prefTimeSeconds = parseFloat(prefTimeMilliseconds/1000).toFixed(3);
+		prefTimeFrames = parseInt((prefTimeMilliseconds/1000)*prefTimeFPS);
+		document.getElementById("timeSeconds").value = prefTimeSeconds;
+		document.getElementById("timeFrames").value = prefTimeFrames;
+	} else if (event=="timeSeconds") {
+		prefTimeSeconds = parseFloat(document.getElementById("timeSeconds").value).toFixed(3);
+		prefTimeMilliseconds = parseInt(prefTimeSeconds*1000);
+		prefTimeFrames = parseInt(prefTimeSeconds*prefTimeFPS);
+		document.getElementById("timeMilliseconds").value = prefTimeMilliseconds;
+		document.getElementById("timeFrames").value = prefTimeFrames;
+	}
+//	return true;
+}
 
 
 
@@ -216,18 +266,27 @@ function lensUpdateAll(event) {
 
 // Show Functions
 
-var transitionIconLeft = new Transition(Transition.CUBE_TYPE, 1.5, Transition.EASE_TIMING, Transition.LEFT_TO_RIGHT_DIRECTION);
-var transitionIconRight = new Transition(Transition.CUBE_TYPE, 1.5, Transition.EASE_TIMING, Transition.RIGHT_TO_LEFT_DIRECTION);
-var transitionWidgetLeft = new Transition(Transition.SWAP_TYPE, 1.5, Transition.EASE_TIMING, Transition.LEFT_TO_RIGHT_DIRECTION);
-var transitionWidgetRight = new Transition(Transition.SWAP_TYPE, 1.5, Transition.EASE_TIMING, Transition.RIGHT_TO_LEFT_DIRECTION);
+// FLIP_TYPE
+// CUBE_TYPE
+// REVOLVE_TYPE
+var	transitionIconLeft = new Transition(Transition.REVOLVE_TYPE, 0.3, Transition.LINEAR_TIMING);
+	transitionIconLeft.direction = Transition.LEFT_TO_RIGHT_DIRECTION;
+var transitionIconRight = new Transition(Transition.REVOLVE_TYPE, 0.3, Transition.LINEAR_TIMING);
+	transitionIconRight.direction = Transition.RIGHT_TO_LEFT_DIRECTION;
+var transitionWidgetLeft = new Transition(Transition.PUSH_TYPE, 0.3, Transition.EASE_TIMING);
+	transitionWidgetLeft.direction = Transition.RIGHT_TO_LEFT_DIRECTION;
+var transitionWidgetRight = new Transition(Transition.PUSH_TYPE, 0.3, Transition.EASE_TIMING);
+	transitionWidgetRight.direction = Transition.LEFT_TO_RIGHT_DIRECTION;
 
-function switchWidget(newIndex,newName) {
-	if (prefCurrentView < newIndex) {
-		document.getElementById("stack").object.setCurrentViewWithTransition(newName, transitionIconLeft, false, true);
+function switchWidget(event) {
+	if (prefWidgetCurrent < prefWidget) {
+		document.getElementById("iconStack").object.setCurrentViewWithTransition("icon"+prefWidget, transitionIconLeft, false);
+		document.getElementById("widgetStack").object.setCurrentViewWithTransition("widget"+prefWidget, transitionWidgetLeft, false);
 	} else {
-		document.getElementById("stack").object.setCurrentViewWithTransition(newName, transitionIconRight, false, true);
+		document.getElementById("iconStack").object.setCurrentViewWithTransition("icon"+prefWidget, transitionIconRight, false);
+		document.getElementById("widgetStack").object.setCurrentViewWithTransition("widget"+prefWidget, transitionWidgetRight, false);
 	}
-	prefCurrentView = newIndex;
+	prefWidgetCurrent = prefWidget;
 }
 
 
@@ -294,5 +353,3 @@ function iaian7(event)
 {
 	widget.openURL("http://iaian7.com/dashboard/camtician");
 }
-
-//*/

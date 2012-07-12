@@ -44,57 +44,39 @@ body {
     height: auto;
 }
 
-#done {
-    position: absolute;
-    right: 21px;
-    bottom: 21px;
-    margin-left: auto;
-    margin-top: auto;
-}
-
-#backDevelopedWith {
-    position: absolute;
-    top: 67px;
-    left: 65px;
-    width: 150px;
-    height: 49px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 #iconStack {
     overflow: hidden;
     z-index: 0;
     position: absolute;
     top: 3px;
     height: 64px;
-    width: 80px;
-    left: 20px;
+    left: 28px;
+    width: 64px;
     margin-right: auto;
     margin-bottom: auto;
+}
+
+#icon0 {
+    width: 100%;
+    display: none;
+    position: relative;
+    background-image: url(Images/Icon-Lens-64.png);
+    min-height: 64px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat no-repeat;
 }
 
 #icon1 {
     width: 100%;
     display: none;
     position: relative;
+    background-image: url(Images/Icon-Time-64.png);
     min-height: 64px;
-    background-image: url(Images/Icon-Lens-64.png);
     background-position: 50% 50%;
     background-repeat: no-repeat no-repeat;
 }
 
 #icon2 {
-    width: 100%;
-    display: none;
-    position: relative;
-    min-height: 64px;
-    background-image: url(Images/Icon-Time-64.png);
-    background-position: 50% 50%;
-    background-repeat: no-repeat no-repeat;
-}
-
-#icon3 {
     width: 100%;
     display: none;
     position: relative;
@@ -406,14 +388,14 @@ body {
     height: auto;
 }
 
-#widget1 {
+#widget0 {
     width: 100%;
     display: none;
     position: relative;
     min-height: 100px;
 }
 
-#widget2 {
+#widget1 {
     width: 100%;
     display: none;
     position: relative;
@@ -421,7 +403,7 @@ body {
     height: auto;
 }
 
-#widget3 {
+#widget2 {
     width: 100%;
     display: none;
     position: relative;
@@ -537,7 +519,7 @@ body {
     color: white;
 }
 
-#cameraType {
+#lensPreset {
     position: absolute;
     color: rgb(255, 255, 255);
     font-size: 14px;
@@ -691,7 +673,7 @@ body {
     color: white;
 }
 
-#fpsText {
+#timeFPSText {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -703,17 +685,17 @@ body {
     -khtml-user-select: none;
     font-size: 12px;
     text-align: center;
-    top: 30px;
     height: 15px;
     width: 70px;
-    left: 95px;
+    left: 0px;
+    top: 20px;
 }
 
-.selected #fpsText {
+.selected #timeFPSText {
     color: white;
 }
 
-#fps {
+#timeFPS {
     position: absolute;
     font-family: HelveticaNeue;
     background-color: rgba(0, 0, 0, 0);
@@ -722,13 +704,13 @@ body {
     border-width: 0px;
     color: rgb(255, 255, 255);
     text-align: center;
-    top: 10px;
     font-size: 16px;
     width: 68px;
-    left: 95px;
+    left: 0px;
+    top: 0px;
 }
 
-#milliseconds {
+#timeMilliseconds {
     position: absolute;
     font-family: HelveticaNeue;
     background-color: rgba(0, 0, 0, 0);
@@ -737,13 +719,13 @@ body {
     border-width: 0px;
     color: rgb(255, 255, 255);
     text-align: center;
-    top: 10px;
     font-size: 16px;
     width: 68px;
-    left: 185px;
+    left: 0px;
+    top: 0px;
 }
 
-#framesText {
+#timeFramesText {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -755,17 +737,17 @@ body {
     -khtml-user-select: none;
     font-size: 12px;
     text-align: center;
-    top: 30px;
     height: 15px;
-    left: 5px;
     width: 70px;
+    left: 0px;
+    top: 20px;
 }
 
-.selected #framesText {
+.selected #timeFramesText {
     color: white;
 }
 
-#millisecondsText {
+#timeMillisecondsText {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -777,17 +759,17 @@ body {
     -khtml-user-select: none;
     font-size: 12px;
     text-align: center;
-    top: 30px;
     height: 15px;
     width: 70px;
-    left: 185px;
+    left: 0px;
+    top: 20px;
 }
 
-.selected #millisecondsText {
+.selected #timeMillisecondsText {
     color: white;
 }
 
-#frames {
+#timeFrames {
     position: absolute;
     font-family: HelveticaNeue;
     background-color: rgba(0, 0, 0, 0);
@@ -796,13 +778,13 @@ body {
     border-width: 0px;
     color: rgb(255, 255, 255);
     text-align: center;
-    top: 10px;
     font-size: 16px;
-    left: 5px;
     width: 68px;
+    left: 0px;
+    top: 0px;
 }
 
-#seconds {
+#timeSeconds {
     position: absolute;
     font-family: HelveticaNeue;
     background-color: rgba(0, 0, 0, 0);
@@ -811,13 +793,13 @@ body {
     border-width: 0px;
     color: rgb(255, 255, 255);
     text-align: center;
-    top: 50px;
     font-size: 16px;
     width: 68px;
-    left: 185px;
+    left: 0px;
+    top: 0px;
 }
 
-#secondsText {
+#timeSecondsText {
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -829,13 +811,13 @@ body {
     -khtml-user-select: none;
     font-size: 12px;
     text-align: center;
-    top: 70px;
     height: 15px;
     width: 70px;
-    left: 185px;
+    top: 20px;
+    left: 0px;
 }
 
-.selected #secondsText {
+.selected #timeSecondsText {
     color: white;
 }
 
@@ -889,83 +871,6 @@ body {
     top: 25px;
 }
 
-#zoomLWBox {
-    border-color: black;
-    border-width: 1px;
-    position: absolute;
-    margin-top: 0px;
-    text-align: left;
-    width: 70px;
-    height: 35px;
-    visibility: hidden;
-    top: 65px;
-    right: 95px;
-    margin-left: auto;
-}
-
-#zoomLW {
-    position: absolute;
-    font-family: HelveticaNeue;
-    background-color: rgba(0, 0, 0, 0);
-    border-color: rgb(0, 0, 0);
-    border-style: solid;
-    border-width: 0px;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    top: 0px;
-    width: 70px;
-    font-size: 16px;
-    left: -1px;
-}
-
-#zoomLWText {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    font-family: 'Helvetica Neue';
-    border-width: 1px;
-    border-color: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.496094);
-    cursor: default;
-    -khtml-user-select: none;
-    font-size: 12px;
-    text-align: right;
-    height: 15px;
-    left: 0px;
-    top: 20px;
-    right: 0px;
-    width: auto;
-}
-
-.selected #zoomLWText {
-    color: white;
-}
-
-#zoomLWZ {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 0px;
-    font-family: 'Helvetica Neue';
-    border-width: 1px;
-    border-color: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.496094);
-    cursor: default;
-    -khtml-user-select: none;
-    -khtml-user-select: none;
-    text-align: right;
-    font-size: 12px;
-    height: 15px;
-    left: 0px;
-    top: 7px;
-    right: 0px;
-    width: auto;
-}
-
-.selected #zoomLWZ {
-    color: white;
-}
-
 #ratioSwap {
     overflow: hidden;
     position: absolute;
@@ -993,78 +898,85 @@ body {
     color: white;
 }
 
-#angleBox1 {
+#timePreset {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-family: 'Helvetica Neue';
+    text-shadow: rgb(0, 0, 0) 0px -1px 0px;
+    height: 25px;
+    text-align: center;
+    left: 0px;
+    width: auto;
+    right: 0px;
+    margin-bottom: auto;
+    top: 0px;
+}
+
+#lensWidthText1 {
+    font-family: 'He#lensWidth1ue';
+    top: 20px;
+    right: 0px;
+}
+
+#timeFramesBox {
     border-color: black;
     border-width: 1px;
     position: absolute;
     margin-top: 0px;
-    text-align: left;
+    left: 5px;
+    top: 25px;
     width: 70px;
     height: 35px;
-    margin-right: auto;
-    top: 65px;
-    left: 185px;
-    visibility: hidden;
 }
 
-#angleDegree1 {
-    text-overflow: ellipsis;
-    overflow: hidden;
+#timeFPSBox {
+    border-color: black;
+    border-width: 1px;
     position: absolute;
     margin-top: 0px;
-    font-family: 'Helvetica Neue';
+    top: 25px;
+    left: 95px;
+    width: 70px;
+    height: 35px;
+}
+
+#timeMillisecondsBox {
+    border-color: black;
     border-width: 1px;
-    border-color: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.496094);
-    cursor: default;
-    -khtml-user-select: none;
-    text-align: right;
-    height: 15px;
-    left: 0px;
-    top: 2px;
-    font-size: 18px;
-    right: 0px;
-    width: auto;
-}
-
-.selected #angleDegree1 {
-    color: white;
-}
-
-#angle1 {
     position: absolute;
-    font-family: HelveticaNeue;
-    background-color: rgba(0, 0, 0, 0);
-    border-color: rgb(0, 0, 0);
-    border-style: solid;
-    border-width: 0px;
-    color: rgb(255, 255, 255);
+    margin-top: 0px;
+    top: 25px;
+    left: 185px;
+    width: 70px;
+    height: 35px;
+}
+
+#timeSecondsBox {
+    border-color: black;
+    border-width: 1px;
+    position: absolute;
+    margin-top: 0px;
+    left: 185px;
+    top: 65px;
+    width: 70px;
+    height: 35px;
+}
+
+#done {
     text-align: center;
-    top: 0px;
-    font-size: 16px;
-    left: 0px;
-    width: 68px;
-}
-
-#angleText1 {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: absolute;
-    font-family: 'Helvetica Neue';
-    border-width: 1px;
-    border-color: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.496094);
+    width: 60px;
     cursor: default;
     -khtml-user-select: none;
-    font-size: 12px;
-    text-align: right;
-    left: 0px;
-    top: 20px;
-    height: 15px;
-    right: 0px;
-    width: auto;
-}
-
-.selected #angleText1 {
-    color: white;
+    position: absolute;
+    height: 25px;
+    font-family: 'Helvetica Neue';
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) 0px -1px 0px;
+    font-size: 14px;
+    letter-spacing: 0px;
+    margin-top: auto;
+    margin-left: auto;
+    bottom: 20px;
+    right: 20px;
 }

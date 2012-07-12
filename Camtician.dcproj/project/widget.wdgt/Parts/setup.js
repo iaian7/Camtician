@@ -5,12 +5,7 @@
  code generator otherwise the changes will be lost.
  */
 var dashcodePartSpecs = {
-    "angleDegree1": { "text": "angleDegree2", "view": "DC.Text" },
-    "angleText1": { "text": "angleText2", "view": "DC.Text" },
-    "cameraType": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "options": ["custom", ["Canon 5D", "1.0"], ["Canon 7D", "1.3"], ["Canon Rebel", "1.6"], ["Nikon Fullframe", "1.0"], ["Nikon Crop", "1.5"]], "rightImageWidth": 16 },
-    "done": { "creationFunction": "CreateGlassButton", "onclick": "showFront", "text": "Done" },
-    "fpsText": { "text": "fpsText", "view": "DC.Text" },
-    "framesText": { "text": "framesText", "view": "DC.Text" },
+    "done": { "creationFunction": "CreateButton", "leftImageWidth": 5, "onclick": "showFront", "rightImageWidth": 5, "text": "done" },
     "iconStack": { "subviewsTransitions": [{ "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }], "view": "DC.StackLayout" },
     "info": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "showBack" },
     "lensAngleDegree": { "text": "lensAngleDegree", "view": "DC.Text" },
@@ -19,19 +14,22 @@ var dashcodePartSpecs = {
     "lensCropX": { "text": "x", "view": "DC.Text" },
     "lensLengthMM": { "text": "LensLengthMM", "view": "DC.Text" },
     "lensLengthText": { "text": "lensLengthText", "view": "DC.Text" },
+    "lensPreset": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "lensCamera", "options": ["custom", ["Canon 5D", "1.0"], ["Canon 7D", "1.3"], ["Canon Rebel", "1.6"], ["Nikon Fullframe", "1.0"], ["Nikon Crop", "1.5"]], "rightImageWidth": 16 },
     "lensWidthMM": { "text": "lensWidthMM", "view": "DC.Text" },
     "lensWidthText": { "text": "lensWidthText", "view": "DC.Text" },
-    "millisecondsText": { "text": "millisecondsText", "view": "DC.Text" },
     "presets": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "presets", "options": ["custom", ["HD 1080p", "1920x1080"], ["HD 720p", "1280x720"], ["HD 480p", "852x480"], ["NTSC", "720x480"], ["PAL", "720x576"], ["Apple iFrame", "960x540"], ["Apple iPhone", "640x960"], ["Apple iPad", "2048x1536"], ["Microsoft WP7", "480x800"], ["Microsoft Surface", "1920x1080"], ["Win8 tablet", "1366x768"], ["Desktop 16x10", "1920x1200"], ["Desktop 4x3", "1600x1200"], ["Film 1.85", "2220x1200"], ["Film 2.35", "2820x1200"]], "rightImageWidth": 16, "view": "DC.View" },
     "ratioAuto": { "creationFunction": "CreateButton", "leftImageWidth": 5, "rightImageWidth": 5, "text": "ratioAuto" },
     "ratioSwap": { "text": "ratioSwap", "view": "DC.Text" },
-    "secondsText": { "text": "secondsText", "view": "DC.Text" },
+    "timeFPSText": { "text": "timeFPSText", "view": "DC.Text" },
+    "timeFramesText": { "text": "timeFramesText", "view": "DC.Text" },
+    "timeMillisecondsText": { "text": "timeMillisecondsText", "view": "DC.Text" },
+    "timePreset": { "creationFunction": "CreatePopupButton", "leftImageWidth": 5, "name": "timePreset", "onchange": "timeUpdateAll", "options": ["custom", ["HDTV", "60"], ["HD Video", "30"], ["NTSC Interlaced", "59.94"], ["NTSC", "29.97"], ["NTSC Film", "23.976"], ["PAL", "25"], ["Film", "24"], ["The Hobbit", "48"]], "rightImageWidth": 16 },
+    "timeSecondsText": { "text": "timeSecondsText", "view": "DC.Text" },
     "widgetStack": { "subviewsTransitions": [{ "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }, { "direction": "right-left", "duration": "", "timing": "ease-in-out", "type": "push" }], "view": "DC.StackLayout" },
-    "widgetSwitch": { "creationFunction": "CreatePopupButton", "leftImageWidth": 4, "name": "widgetSwitch", "options": [["lens", "Item 1"], ["time", "Item 2"], ["ratio", "Item 3"]], "rightImageWidth": 16 },
+    "widgetSwitch": { "creationFunction": "CreatePopupButton", "leftImageWidth": 4, "name": "widgetSwitch", "onchange": "updateWidget", "options": [["lens", "0"], ["time", "1"], ["ratio", "2"]], "rightImageWidth": 16 },
     "x1": { "text": "x", "view": "DC.Text" },
     "x2": { "text": "%", "view": "DC.Text" },
-    "x3": { "text": "x", "view": "DC.Text" },
-    "zoomLWText": { "text": "zoomLWText", "view": "DC.Text" },
-    "zoomLWZ": { "text": "zoomLWZ", "view": "DC.Text" }
+    "x3": { "text": "x", "view": "DC.Text" }
 };
+
 

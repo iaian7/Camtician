@@ -14,6 +14,7 @@ var localizedStrings = {
     "cropFactorText": "crop factor",
     "cropFactorX": "x",
     "Done": "Done",
+    "done": "done",
     "fpsText": "project fps",
     "framesText": "frames",
     "Hello, World!": "Hello, World!",
@@ -50,6 +51,10 @@ var localizedStrings = {
     "TextMM2": "mm",
     "textSensor": "sensor size",
     "textSensor1": "sensor size",
+    "timeFPSText": "project fps",
+    "timeFramesText": "frames",
+    "timeMillisecondsText": "milliseconds",
+    "timeSecondsText": "seconds",
     "x": "×",
     "x1": "×",
     "zoomAEpx": "px",
@@ -58,5 +63,6 @@ var localizedStrings = {
     "zoomLWText": "lightwave",
     "zoomLWZ": "z"
 };
+
 
 
