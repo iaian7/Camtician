@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleAnimator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleInfoButton.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="Parts/Transitions.css">
+    <script type="text/javascript" src="Parts/parts.js" charset="utf-8"></script>
+    <script type="text/javascript" src="localizedStrings.js" charset="utf-8"></script>
+    <script type="text/javascript" src="main.js" charset="utf-8"></script>
+</head>
+<body onload="load();">
+    <div id="front">
+        <img id="frontImg" src="Parts/Images/front.png" alt="">
+        <div id="widgetSwitchBox">
+            <div id="widgetSwitch"></div>
+        </div>
+        <div id="widgetBox">
+            <div id="widgetStack"><div id="widget0">
+                    <div id="lensPreset"></div>
+                    <div id="lensWidthBox">
+                        <div id="lensWidthMM"></div>
+                        <input id="lensWidth" type="text" name="lensWidth" value="22.5" onchange="lensUpdateAll(event)">
+                        <div id="lensWidthText"></div>
+                    </div>
+                    <div id="lensCropBox">
+                        <div id="lensCropX"></div>
+                        <input id="lensCrop" type="text" name="lensCrop" value="1.60" onchange="lensUpdateAll(event)">
+                        <div id="lensCropText"></div>
+                    </div>
+                    <div id="lensLengthBox">
+                        <div id="lensLengthMM"></div>
+                        <input id="lensLength" type="text" name="lensLength" value="23.0" onchange="lensUpdateAll(event)">
+                        <div id="lensLengthText"></div>
+                    </div>
+                    <div id="lensAngleBox">
+                        <div id="lensAngleDegree"></div>
+                        <input id="lensAngle" type="text" name="lensAngle" value="51.52" onchange="lensUpdateAll(event)">
+                        <div id="lensAngleText"></div>
+                    </div>
+                </div><div id="widget1">
+                    <div id="timePreset"></div>
+                    <div id="timeFramesBox">
+                        <input id="timeFrames" type="text" name="timeFrames" value="15" onchange="timeUpdateAll(event)">
+                        <div id="timeFramesText"></div>
+                    </div>
+                    <div id="timeFPSBox">
+                        <input id="timeFPS" type="text" name="timeFPS" value="30" onchange="timeUpdateAll(event)">
+                        <div id="timeFPSText"></div>
+                    </div>
+                    <div id="timeMillisecondsBox">
+                        <input id="timeMilliseconds" type="text" name="timeMilliseconds" value="500" onchange="timeUpdateAll(event)">
+                        <div id="timeMillisecondsText"></div>
+                    </div>
+                    <div id="timeSecondsBox">
+                        <input id="timeSeconds" type="text" name="timeSeconds" value="0.500" onchange="timeUpdateAll(event)">
+                        <div id="timeSecondsText"></div>
+                    </div>
+                </div><div id="widget2">
+                    <div id="presets"></div>
+                    <div id="ratioAuto"></div>
+                    <div id="inputBox">
+                        <div id="x1"></div>
+                        <input type="text" name="inputX" value="1920" id="inputX">
+                        <input type="text" name="inputY" value="1080" id="inputY">
+                        <div id="ratioSwap"></div>
+                    </div>
+                    <div id="scaleBox">
+                        <input type="text" name="scale" value="66.67" id="scale">
+                        <div id="x2"></div>
+                    </div>
+                    <div id="outputBox">
+                        <div id="x3"></div>
+                        <input type="text" name="outputX" value="1280" id="outputX">
+                        <input type="text" name="outputY" value="720" id="outputY">
+                    </div>
+                </div></div>
+        </div>
+        <div id="iconStack"><div id="icon0">
+            </div><div id="icon1">
+            </div><div id="icon2">
+            </div></div>
+        <div id="info"></div>
+    </div>
+    <div id="back">
+        <img id="backImg" src="Parts/Images/back.png" alt="">
+        <div id="done"></div>
+    </div>
+</body>
+</html>
